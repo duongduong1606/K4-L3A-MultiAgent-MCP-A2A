@@ -52,7 +52,15 @@ day09 --help
 COMPETITION_API_URL=http://127.0.0.1:8081
 COMPETITION_TEAM_API_KEY=sk-team-your_key
 MCP_ENDPOINT=http://127.0.0.1:8001/mcp
+STUDENT_AGENT_MODEL_NAME=qwen2.5:7b-instruct
+STUDENT_AGENT_MODEL_PROVIDER=local
+STUDENT_AGENT_MODEL_PARAMETER_COUNT_B=7
 ```
+
+Model có thể chạy local hoặc gọi provider tuỳ ý, nhưng phải dưới 108B parameters. Tên model
+phải được khai báo bằng `STUDENT_AGENT_MODEL_NAME` để khi đóng gói có mặt trong
+`manifest.json`. API key và secret chỉ đặt trong `.env`, không commit và không ghi vào output,
+trace hay log.
 
 ## 3. Tải input
 
@@ -174,7 +182,7 @@ trace.jsonl
 outputs/<case_id>.json
 ```
 
-Không đưa source, input, `.env`, API key hoặc debug log vào ZIP. Sau đó upload `dist/submission.zip` tại workspace `/l3a`
+Không đưa source code, input, `.env`, API key, secret, file audit hoặc debug log vào ZIP. Sau đó upload `dist/submission.zip` tại workspace `/l3a`
 
 ## Tiêu chí chấm điểm công khai
 
