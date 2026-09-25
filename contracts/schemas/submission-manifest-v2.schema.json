@@ -11,7 +11,8 @@
     "case_set_version",
     "output_schema_version",
     "trace_schema_version",
-    "generated_at"
+    "generated_at",
+    "client"
   ],
   "properties": {
     "schema_version": {"const": "day09-submission-manifest-v2"},
@@ -29,6 +30,7 @@
     "client": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["name", "version"],
       "properties": {
         "name": {"type": "string", "minLength": 1, "maxLength": 80},
         "version": {"type": "string", "minLength": 1, "maxLength": 40}

@@ -69,7 +69,8 @@ Coordinator chỉ gọi tool đã xuất hiện trong `list_tools`; thiếu tool
 abort, không đoán tên tool. Một case dùng tối đa 7 core calls, thêm 1 refund call
 khi claim route là `refund_pending` hoặc `refund_failed`.
 
-## 3. A2A protocol
+Không có vòng lặp agent đệ quy. Verifier chỉ finalize khi đã có ít nhất một
+`evidence_ref` thật từ MCP.
 
 Internal handoff là dataclass `Handoff`, không phải public output field:
 

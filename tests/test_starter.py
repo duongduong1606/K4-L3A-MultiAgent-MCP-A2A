@@ -59,3 +59,5 @@ def test_generated_manifest_matches_public_contract() -> None:
     manifest = build_manifest(case_set)
     contracts.validate_manifest(manifest)
     assert manifest["output_schema_version"] == OUTPUT_SCHEMA_VERSION
+    assert manifest["model"]["name"]
+    assert 0 < manifest["model"]["parameter_count_billion"] < 108
